@@ -1,8 +1,29 @@
+"use client";
 import React from "react";
-import { useEffect } from "react";
-import { app, database } from "./Services/firebaseConfig";
+import { useEffect, useState } from "react";
+import fetchVehicleMake from "./Utils/FetchDataFromFirestore";
+
 const App = () => {
-  return <div>App</div>;
+  const [vehicleMakeData, setVehicleMakeData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await fetchVehicleMake();
+      setVehicleMakeData(data);
+    }
+    fetchData();
+  });
+  return (
+    <div>
+      App
+      <h1>Data</h1>
+      <p>
+        {vehicleMakeData.map(
+          (data) => `Name: ${data.Name} Abrv: ${data.Abrv} `
+        )}
+      </p>
+    </div>
+  );
 };
 
 export default App;

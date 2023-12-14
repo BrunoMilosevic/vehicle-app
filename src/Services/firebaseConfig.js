@@ -4,6 +4,8 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyCH05lJuZsxLvuk3jPPksU872VZdmpVi1A",
   authDomain: "mono-app-e0295.firebaseapp.com",
+  databaseURL:
+    "https://console.firebase.google.com/project/mono-app-e0295/database/mono-app-e0295-default-rtdb/data/~2F",
   projectId: "mono-app-e0295",
   storageBucket: "mono-app-e0295.appspot.com",
   messagingSenderId: "176993674293",
