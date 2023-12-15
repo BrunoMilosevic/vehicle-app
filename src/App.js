@@ -1,7 +1,10 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
-import fetchVehicleMake from "./Utils/FetchDataFromFirestore";
+import fetchVehicleMake from "./Utils/FetchVehicleMake";
+import Grid from "./Pages/Grid";
+
+import "./App.css";
 
 const App = () => {
   const [vehicleMakeData, setVehicleMakeData] = useState([]);
@@ -14,14 +17,9 @@ const App = () => {
     fetchData();
   });
   return (
-    <div>
-      App
-      <h1>Data</h1>
-      <p>
-        {vehicleMakeData.map(
-          (data) => `Name: ${data.Name} Abrv: ${data.Abrv} `
-        )}
-      </p>
+    <div className="app">
+      
+      <Grid />
     </div>
   );
 };
