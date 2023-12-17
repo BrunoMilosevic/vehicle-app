@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fetchVehicleMake from "../Utils/FetchVehicleMake";
-
+import { Link } from "react-router-dom";
 const CarMake = () => {
   const [vehicleMakeData, setVehicleMakeData] = useState([]);
 
@@ -16,9 +16,9 @@ const CarMake = () => {
   return (
     <div className="car-make-grid">
       {vehicleMakeData.map((data) => (
-        <div className="car-make">
-          <h2 key={data.Id}>{data.Name}</h2>
-        </div>
+        <Link to={`/models/${data.Id}`} key={data.Id} className="car-make">
+          <h2>{data.Name}</h2>
+        </Link>
       ))}
     </div>
   );
